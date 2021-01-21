@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/draescherl/bot-air/issues"
   },
-  "homepage": "https://github.com/draescherl/bot-air#readme"
+  "homepage": "https://github.com/draescherl/bot-air#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
 }
