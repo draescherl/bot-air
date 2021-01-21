@@ -26,8 +26,10 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 
   /* Create new channel once someone clicks on the trigger */
   if (newMember.channel != undefined) {
-    if (newMember.channel.name === 'Créer salon vocal') {
-      let channelName = 'tmp' //+ newMember.channel.parentId.children.size - 1;
+    if (newMember.channel.name === 'Créer salon vocal') {    
+      let category = newMember.guild.channels.cache.find(c => c.id = newMember.channel.parentID);
+      let children = category.children.size;
+      let channelName = 'tmp - ' + children.toString();
       newMember.guild.channels.create(channelName, {
         type: 'voice',
         parent: newMember.channel.parentID
