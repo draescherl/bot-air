@@ -1,0 +1,22 @@
+{
+  "name": "bot-air",
+  "version": "1.0.0",
+  "description": "A bot to help manage the AIR-EISTI discord server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/draescherl/bot-air.git"
+  },
+  "keywords": [
+    "bot"
+  ],
+  "author": "Lucas Draescher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/draescherl/bot-air/issues"
+  },
+  "homepage": "https://github.com/draescherl/bot-air#readme"
+}
