@@ -3,7 +3,7 @@ const discord = require('discord.js');
 
 /* Fetch creds and config */
 const { token } = require('./creds.json');
-const { prefix, trigger } = require('./config.json');
+const { prefix, trigger, probability } = require('./config.json');
 
 /* Bot init */
 const client = new discord.Client;
@@ -47,6 +47,23 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
     }
   }
 
+});
+
+
+/* Message troll */
+client.on('message', msg => {
+  if (msg.content.toLowerCase().includes('di')) {
+    console.log('Message found !');
+    if (Math.random() < probability) {
+      let words = msg.content.split(' ');
+      let word = '';
+      words.forEach(w => {
+        if (w.toLowerCase().includes('di')) { word = w }
+      });
+      word = word.split('di').pop();
+      msg.channel.send(word);
+    }
+  }
 });
 
 

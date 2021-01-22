@@ -1,4 +1,5 @@
 {
   "prefix": "Salon temporaire ",
-  "trigger": "Créer salon vocal"
+  "trigger": "Créer salon vocal",
+  "probability": 0.1
 }
