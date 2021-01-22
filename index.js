@@ -1,8 +1,9 @@
 /* Imports */
 const discord = require('discord.js');
 
-/* Fetch creds */
+/* Fetch creds and config */
 const { token } = require('./creds.json');
+const { prefix, trigger } = require('./config.json');
 
 /* Bot init */
 const client = new discord.Client;
@@ -10,10 +11,6 @@ client.once('ready', () => {
   console.log('AIR-BOT is online.');
   client.user.setActivity('RODR PD', { type: 'PLAYING' });
 });
-
-/* Constants */
-const prefix = 'Salon temporaire ';
-const trigger = 'Créer salon vocal';
 
 
 /* Temporary voice channel */
