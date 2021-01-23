@@ -10,9 +10,9 @@ This bot can do a few things :
 </ol>
 
 ## Installation
-Step 1 : clone the git repository `git@github.com:draescherl/bot-air.git`. <br>
-Step 2 : move to the corresponding directory : `cd capaural`. <br>
-Step 3 : install dependencies : `npm install`
+Step 1 : clone the git repository `git@github.com:draescherl/bot-air.git` <br>
+Step 2 : move to the corresponding directory : `cd capaural` <br>
+Step 3 : install dependencies : `npm install` <br>
 Step 4 : create a `creds.json` file and paste these contents : 
 ```json
 {
