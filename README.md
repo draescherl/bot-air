@@ -33,7 +33,7 @@ There are a few setting you can change in the `config.json` file :
 From the same directory as `index.js`, run `node .`
 
 ## Requirements
-This bot was written with [Node.js](nodejs.org/) version 15.0.1 using [discord.js](discord.js.org/) version 12.5.1
+This bot was written with [Node.js](https://nodejs.org/) version 15.0.1 using [discord.js](https://discord.js.org/) version 12.5.1
 
 ## Author
 Lucas DRAESCHER (draescherl@eisti.eu)
