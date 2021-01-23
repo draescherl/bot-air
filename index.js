@@ -1,10 +1,14 @@
-/* Imports */
-const discord = require('discord.js');
-
-/* Fetch creds and config */
+/* ------------------------------------------------------------------------ */
+/*                      Imports and requirements                            */
+/* ------------------------------------------------------------------------ */
+const discord   = require('discord.js');
 const { token } = require('./creds.json');
 const { prefix, trigger, probability } = require('./config.json');
 
+
+/* ------------------------------------------------------------------------ */
+/*                          Utility functions                               */
+/* ------------------------------------------------------------------------ */
 /* Function to fetch and return current time and date */
 function logDate() {
   let currentdate = new Date(); 
@@ -17,7 +21,10 @@ function logDate() {
   return(datetime.toString());
 }
 
-/* Bot init */
+
+/* ------------------------------------------------------------------------ */
+/*                        Bot initialisation                                */
+/* ------------------------------------------------------------------------ */
 const client = new discord.Client;
 client.once('ready', () => {
   console.log('AIR-BOT is online.');
@@ -25,7 +32,9 @@ client.once('ready', () => {
 });
 
 
-/* Temporary voice channel */
+/* ------------------------------------------------------------------------ */
+/*                         Temporary voice channel                          */
+/* ------------------------------------------------------------------------ */
 client.on('voiceStateUpdate', (oldMember, newMember) => {
   
   /* Delete channel once everybody has left */
@@ -66,7 +75,9 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 });
 
 
-/* Message troll */
+/* ------------------------------------------------------------------------ */
+/*                           Reacting to messages                           */
+/* ------------------------------------------------------------------------ */
 client.on('message', msg => {
   if (msg.content.toLowerCase().includes('di')) {
     
@@ -109,5 +120,7 @@ client.on('message', msg => {
 });
 
 
-/* Run bot */
+/* ------------------------------------------------------------------------ */
+/*                               Run bot                                    */
+/* ------------------------------------------------------------------------ */
 client.login(token);
