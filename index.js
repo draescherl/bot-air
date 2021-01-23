@@ -69,17 +69,42 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 /* Message troll */
 client.on('message', msg => {
   if (msg.content.toLowerCase().includes('di')) {
+    
+    /* Bot repeats the characters after di (say in French) */
     console.log(logDate() + 'Found a message with \'di\' in it: ' + msg.cleanContent);
     if (Math.random() < probability) {
-      console.log(logDate() + 'It\'s your lucky day, this message was chosen to be the one.')
       let words = msg.content.split(' ');
       let word = '';
       words.forEach(w => {
         if (w.toLowerCase().includes('di')) { word = w }
       });
-      word = word.split('di').pop();
-      msg.channel.send(word);
+      /* Prevent the bot from being triggered if someone says just 'di' */
+      if (word.length > 2) {
+        console.log(logDate() + 'It\'s your lucky day, this message was chosen to be the one.')
+        word = word.split('di').pop();
+        msg.channel.send(word);
+      }
     }
+
+  } else if (msg.content.toLowerCase().includes('cri')) {
+    
+    /* Bot shouts the characters after cri (shout in French) */
+    console.log(logDate() + 'Found a message with \'cri\' in it: ' + msg.cleanContent);
+    if (Math.random() < probability) {
+      let words = msg.content.split(' ');
+      let word = '';
+      words.forEach(w => {
+        if (w.toLowerCase().includes('cri')) { word = w }
+      });
+      /* Prevent the bot from being triggered if someone says just 'cri' */
+      if (word.length > 3) {
+        console.log(logDate() + 'It\'s your lucky day, this message was chosen to be the one.');
+        word = word.split('cri').pop();
+        word = word.toUpperCase() + ' !';
+        msg.channel.send(word);
+      }
+    }
+
   }
 });
 
