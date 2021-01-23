@@ -11,13 +11,15 @@ This bot can do a few things :
 
 ## Installation
 Step 1 : clone the git repository `git@github.com:draescherl/bot-air.git`. <br>
-Step 2 : create a `creds.json` file and paste these contents : 
+Step 2 : move to the corresponding directory : `cd capaural`. <br>
+Step 3 : install dependencies : `npm install`
+Step 4 : create a `creds.json` file and paste these contents : 
 ```json
 {
   "token": ""
 }
 ```
-Step 3 : paste your discord bot token in the `creds.json` file.
+Step 5 : paste your discord bot token in the `creds.json` file.
 
 ## Configuration
 There are a few setting you can change in the `config.json` file :
@@ -26,3 +28,12 @@ There are a few setting you can change in the `config.json` file :
   <li>trigger : the name of the channel that will act as the trigger for creating a temporary VC.</li>
   <li>probability : percentage of chances for the bot to send a message in chat (0.1 = 10%), range : probability in [0;1]</li>
 </ul>
+
+## Execution
+From the same directory as `index.js`, run `node .`.
+
+## Requirements
+This bot was written with [Node.js](nodejs.org/) version 15.0.1 using [discord.js](discord.js.org/) version 12.5.1.
+
+## Author
+Lucas DRAESCHER (draescherl@eisti.eu)
