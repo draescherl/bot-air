@@ -27,7 +27,7 @@ function logDate() {
 /* ------------------------------------------------------------------------ */
 const client = new discord.Client;
 client.once('ready', () => {
-  console.log('AIR-BOT is online.');
+  console.log(logDate() + 'AIR-BOT is online.');
   client.user.setActivity('RODR PD', { type: 'PLAYING' });
 });
 
