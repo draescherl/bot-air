@@ -4,7 +4,8 @@
   "description": "A bot to help manage the AIR-EISTI discord server",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
