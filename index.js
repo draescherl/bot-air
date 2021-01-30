@@ -1,7 +1,7 @@
 /* ------------------------------------------------------------------------ */
 /*                      Imports and requirements                            */
 /* ------------------------------------------------------------------------ */
-const discord = require('discord.js');
+const discord   = require('discord.js');
 const { prefix, trigger, probability } = require('./config.json');
 
 
@@ -52,12 +52,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
       console.log(logDate() + 'User \'' + newMember.member.user.username + '\' just connected to a trigger channel.');
 
       /* Create channel name */
-      let category = newMember.guild.channels.cache.find(c => c.id = newMember.channel.parentID);
-      let number = 0;
-      category.children.forEach(c => {
-        if (c.type == 'voice') { number++; }
-      });
-      let channelName = prefix + number.toString();
+      let channelName = prefix + ' de ' + newMember.member.user.username;
       
       /* Create channel and move user to it */
       console.log(logDate() + 'Creating channel \'' + channelName + '\'.');
@@ -77,46 +72,46 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
 /* ------------------------------------------------------------------------ */
 /*                           Reacting to messages                           */
 /* ------------------------------------------------------------------------ */
-client.on('message', msg => {
-  if (msg.content.toLowerCase().includes('di')) {
+// client.on('message', msg => {
+//   if (msg.content.toLowerCase().includes('di')) {
     
-    /* Bot repeats the characters after di (say in French) */
-    console.log(logDate() + 'Found a message with \'di\' in it: ' + msg.cleanContent);
-    if (Math.random() < probability) {
-      let words = msg.content.split(' ');
-      let word = '';
-      words.forEach(w => {
-        if (w.toLowerCase().includes('di')) { word = w }
-      });
-      /* Prevent the bot from being triggered if someone says just 'di' */
-      if (word.length > 2) {
-        console.log(logDate() + 'It\'s your lucky day, this message was chosen to be the one.')
-        word = word.split('di').pop();
-        msg.channel.send(word);
-      }
-    }
+//     /* Bot repeats the characters after di (say in French) */
+//     console.log(logDate() + 'Found a message with \'di\' in it: ' + msg.cleanContent);
+//     if (Math.random() < probability) {
+//       let words = msg.content.split(' ');
+//       let word = '';
+//       words.forEach(w => {
+//         if (w.toLowerCase().includes('di')) { word = w }
+//       });
+//       /* Prevent the bot from being triggered if someone says just 'di' */
+//       if (word.length > 2) {
+//         console.log(logDate() + 'It\'s your lucky day, this message was chosen to be the one.')
+//         word = word.split('di').pop();
+//         msg.channel.send(word);
+//       }
+//     }
 
-  } else if (msg.content.toLowerCase().includes('cri')) {
+//   } else if (msg.content.toLowerCase().includes('cri')) {
     
-    /* Bot shouts the characters after cri (shout in French) */
-    console.log(logDate() + 'Found a message with \'cri\' in it: ' + msg.cleanContent);
-    if (Math.random() < probability) {
-      let words = msg.content.split(' ');
-      let word = '';
-      words.forEach(w => {
-        if (w.toLowerCase().includes('cri')) { word = w }
-      });
-      /* Prevent the bot from being triggered if someone says just 'cri' */
-      if (word.length > 3) {
-        console.log(logDate() + 'It\'s your lucky day, this message was chosen to be the one.');
-        word = word.split('cri').pop();
-        word = word.toUpperCase() + ' !';
-        msg.channel.send(word);
-      }
-    }
+//     /* Bot shouts the characters after cri (shout in French) */
+//     console.log(logDate() + 'Found a message with \'cri\' in it: ' + msg.cleanContent);
+//     if (Math.random() < probability) {
+//       let words = msg.content.split(' ');
+//       let word = '';
+//       words.forEach(w => {
+//         if (w.toLowerCase().includes('cri')) { word = w }
+//       });
+//       /* Prevent the bot from being triggered if someone says just 'cri' */
+//       if (word.length > 3) {
+//         console.log(logDate() + 'It\'s your lucky day, this message was chosen to be the one.');
+//         word = word.split('cri').pop();
+//         word = word.toUpperCase() + ' !';
+//         msg.channel.send(word);
+//       }
+//     }
 
-  }
-});
+//   }
+// });
 
 
 /* ------------------------------------------------------------------------ */
