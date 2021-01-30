@@ -10,7 +10,7 @@ This bot can do a few things :
 </ol>
 
 ## Installation
-This branch is for hosting the bot on [Heroku](www.heroku.com). <br>
+This branch is for hosting the bot on [Heroku](https://heroku.com). <br>
 All you need is an environment variable called `BOT_TOKEN` in which you store your secret token.
 
 ## Configuration
