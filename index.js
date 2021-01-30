@@ -60,7 +60,7 @@ client.on('voiceStateUpdate', (oldMember, newMember) => {
         type: 'voice',
         parent: newMember.channel.parentID
       }).then(vc => {
-        console.log(logDate() + 'Moving \'' + newMember.member.user.username + '\' to temporary voice channel \'' + newMember.channel.name + '\'.');
+        console.log(logDate() + 'Moving \'' + newMember.member.user.username + '\' to temporary voice channel \'' + channelName + '\'.');
         newMember.setChannel(vc);
       });
     }
