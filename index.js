@@ -1,8 +1,7 @@
 /* ------------------------------------------------------------------------ */
 /*                      Imports and requirements                            */
 /* ------------------------------------------------------------------------ */
-const discord   = require('discord.js');
-const { token } = require('./creds.json');
+const discord = require('discord.js');
 const { prefix, trigger, probability } = require('./config.json');
 
 
@@ -123,4 +122,4 @@ client.on('message', msg => {
 /* ------------------------------------------------------------------------ */
 /*                               Run bot                                    */
 /* ------------------------------------------------------------------------ */
-client.login(token);
+client.login(process.env.BOT_TOKEN);
